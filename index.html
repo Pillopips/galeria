@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fotografía</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css"/>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="title-block">
+    <h1>PilloPips</h1>
+    <p>Skaters And Sunsets</p>
+
+    <a class="ig-link" href="https://instagram.com/pillopips" target="_blank">
+      Instagram
+    </a>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery">
+
+  <div class="card" data-title="Plaza de la Marina Fonsi 2019" data-price="80€ · 42x59,4 cm">
+    <div class="img-wrap">
+      <img src="img/fonsimarina.jpg" onclick="openModal(0)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Tony Hawk McTwist Málaga 2015" data-price="40€ · A3">
+    <div class="img-wrap">
+      <img src="img/Tony hawk mctwist skatepark ruben alcantara A3.jpg" onclick="openModal(1)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Montes 2012" data-price="40€ · A3">
+    <div class="img-wrap">
+      <img src="img/Veny Y Yonka minirampa de los montes A3.jpg" onclick="openModal(2)">
+    </div>
+  </div>
+
+  <div class="card" data-title="360 Flip bajo la lluvia - 2014" data-price="40€ · A3">
+    <div class="img-wrap">
+      <img src="img/Alvaro 360 flip rio bajo el puente 40X50.jpg" onclick="openModal(3)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Ben raybourn 540 - 2015" data-price="40€ · A3">
+    <div class="img-wrap">
+      <img src="img/Ben raybourn 540 con Shaun Hale mirando A3.jpg" onclick="openModal(4)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Diego en el rio, homenaje peluca 2016" data-price="80€ · 40x50 cm">
+    <div class="img-wrap">
+      <img src="img/Diego homenaje peluca 40X50.jpg" onclick="openModal(5)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Street Mood" data-price="25€ · A4">
+    <div class="img-wrap">
+      <img src="img/David ollie over rafael 40X50.jpg" onclick="openModal(6)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Skate Air" data-price="60€ · A3">
+    <div class="img-wrap">
+      <img src="img/carlos del amo fs noseslide A3.jpg" onclick="openModal(7)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Sunset Line" data-price="100€ · 40x50 cm">
+    <div class="img-wrap">
+      <img src="img/boxeando minirampa lagarillo 40X50.jpg" onclick="openModal(8)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
+    <div class="img-wrap">
+      <img src="img/Jaime Bueno bs tail paseo del parque A3.jpg" onclick="openModal(9)">
+    </div>
+  </div>
+
+  <!-- resto de tus cards iguales -->
+  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
+    <div class="img-wrap">
+      <img src="img/Jorde calderon flip rio homenaje al peluca A3.jpg" onclick="openModal(10)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
+    <div class="img-wrap">
+      <img src="img/la equitativa atardecer 40X50.jpg" onclick="openModal(11)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
+    <div class="img-wrap">
+      <img src="img/palmeras plaza de la marina A2.jpg" onclick="openModal(12)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
+    <div class="img-wrap">
+      <img src="img/Ricky Melon Fakie A3.jpg" onclick="openModal(13)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
+    <div class="img-wrap">
+      <img src="img/Nube Alien A3.jpg" onclick="openModal(14)">
+    </div>
+  </div>
+
+  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
+    <div class="img-wrap">
+      <img src="img/pajaros enamorados 40X50.jpg" onclick="openModal(15)">
+    </div>
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<div id="modal">
+
+  <span class="close" onclick="closeModal()">×</span>
+
+  <button class="nav left" onclick="event.stopPropagation(); prevImg()">‹</button>
+
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <img id="modalImg">
+
+    <div class="modal-info">
+      <h3 id="modalTitle"></h3>
+      <p id="modalPrice"></p>
+      <p class="extra">Papel Fujicolor Profesional</p>
+    </div>
+  </div>
+
+  <button class="nav right" onclick="event.stopPropagation(); nextImg()">›</button>
+
+</div>
+
+<!-- SCRIPT ÚNICO CORREGIDO -->
+<script>
+
+let currentIndex = 0;
+
+const images = Array.from(document.querySelectorAll(".card img"));
+
+function openModal(index){
+  currentIndex = index;
+  updateModal();
+  document.getElementById("modal").style.display = "flex";
+}
+
+function updateModal(){
+  const img = images[currentIndex];
+
+  document.getElementById("modalImg").src = img.src;
+
+  const card = img.closest(".card");
+  document.getElementById("modalTitle").innerText = card.dataset.title;
+  document.getElementById("modalPrice").innerText = card.dataset.price;
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+
+function nextImg(){
+  currentIndex = (currentIndex + 1) % images.length;
+  updateModal();
+}
+
+function prevImg(){
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateModal();
+}
+
+/* click fuera cierra */
+document.getElementById("modal").addEventListener("click", closeModal);
+
+/* SWIPE MOBILE */
+let startX = 0;
+
+document.getElementById("modal").addEventListener("touchstart", e=>{
+  startX = e.touches[0].clientX;
+});
+
+document.getElementById("modal").addEventListener("touchend", e=>{
+  let endX = e.changedTouches[0].clientX;
+
+  if(startX - endX > 50){
+    nextImg();
+  }
+
+  if(endX - startX > 50){
+    prevImg();
+  }
+});
+
+</script>
+
+</body>
+</html>
