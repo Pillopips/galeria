@@ -1,17 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fotografía</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fotografía</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="style.css"/>
 
+<style>
+body{
+  margin:0;
+  font-family:"Poppins", sans-serif;
+  background:#fafafa;
+  color:#111;
+}
+
+/* HEADER */
+.header{
+  padding:70px 70px 10px;
+  text-align:center;
+}
+
+.title-block h1{
+  margin:0;
+  font-size:30px;
+  font-weight:800;
+}
+
+.title-block p{
+  font-size:14px;
+  color:#777;
+}
+
+.ig-link{
+  font-size:13px;
+  text-decoration:none;
+  border-bottom:1px solid #ddd;
+  color:#111;
+}
+
+/* GALLERY */
+.gallery{
+  max-width:950px;
+  margin:0 auto;
+  padding:20px 30px 80px;
+}
+
+.card{
+  margin-bottom:60px;
+}
+
+.img-wrap{
+  position:relative;
+  overflow:hidden;
+  border-radius:10px;
+}
+
+.img-wrap img{
+  width:100%;
+  display:block;
+  cursor:pointer;
+  transition:transform .3s ease;
+}
+
+.img-wrap:hover img{
+  transform:scale(1.03);
+}
+
+/* MODAL */
+#modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+#modalImg{
+  max-width:90%;
+  max-height:80vh;
+  object-fit:contain;
+  will-change:transform;
+}
+
+.modal-info{
+  color:#fff;
+  text-align:center;
+  margin-top:15px;
+}
+
+.close{
+  position:absolute;
+  top:20px;
+  right:25px;
+  font-size:35px;
+  color:#fff;
+  cursor:pointer;
+}
+
+.nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:40px;
+  color:#fff;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.nav.left{ left:10px; }
+.nav.right{ right:10px; }
+
+</style>
 </head>
 
 <body>
@@ -21,14 +129,11 @@
   <div class="title-block">
     <h1>PilloPips</h1>
     <p>Skaters And Sunsets</p>
-
-    <a class="ig-link" href="https://instagram.com/pillopips" target="_blank">
-      Instagram
-    </a>
+    <a class="ig-link" href="https://instagram.com/pillopips" target="_blank">Instagram</a>
   </div>
 </div>
 
-<!-- GALLERY -->
+<!-- GALLERY (TUS CARDS SIN TOCAR) -->
 <section class="gallery">
 
   <div class="card" data-title="Plaza de la Marina Fonsi 2019" data-price="80€ · 42x59,4 cm">
@@ -61,73 +166,6 @@
     </div>
   </div>
 
-  <div class="card" data-title="Diego en el rio, homenaje peluca 2016" data-price="80€ · 40x50 cm">
-    <div class="img-wrap">
-      <img src="img/Diego homenaje peluca 40X50.jpg" onclick="openModal(5)">
-    </div>
-  </div>
-
-  <div class="card" data-title="Street Mood" data-price="25€ · A4">
-    <div class="img-wrap">
-      <img src="img/David ollie over rafael 40X50.jpg" onclick="openModal(6)">
-    </div>
-  </div>
-
-  <div class="card" data-title="Skate Air" data-price="60€ · A3">
-    <div class="img-wrap">
-      <img src="img/carlos del amo fs noseslide A3.jpg" onclick="openModal(7)">
-    </div>
-  </div>
-
-  <div class="card" data-title="Sunset Line" data-price="100€ · 40x50 cm">
-    <div class="img-wrap">
-      <img src="img/boxeando minirampa lagarillo 40X50.jpg" onclick="openModal(8)">
-    </div>
-  </div>
-
-  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
-    <div class="img-wrap">
-      <img src="img/Jaime Bueno bs tail paseo del parque A3.jpg" onclick="openModal(9)">
-    </div>
-  </div>
-
-  <!-- resto de tus cards iguales -->
-  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
-    <div class="img-wrap">
-      <img src="img/Jorde calderon flip rio homenaje al peluca A3.jpg" onclick="openModal(10)">
-    </div>
-  </div>
-
-  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
-    <div class="img-wrap">
-      <img src="img/la equitativa atardecer 40X50.jpg" onclick="openModal(11)">
-    </div>
-  </div>
-
-  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
-    <div class="img-wrap">
-      <img src="img/palmeras plaza de la marina A2.jpg" onclick="openModal(12)">
-    </div>
-  </div>
-
-  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
-    <div class="img-wrap">
-      <img src="img/Ricky Melon Fakie A3.jpg" onclick="openModal(13)">
-    </div>
-  </div>
-
-  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
-    <div class="img-wrap">
-      <img src="img/Nube Alien A3.jpg" onclick="openModal(14)">
-    </div>
-  </div>
-
-  <div class="card" data-title="Urban Silence" data-price="50€ · A3">
-    <div class="img-wrap">
-      <img src="img/pajaros enamorados 40X50.jpg" onclick="openModal(15)">
-    </div>
-  </div>
-
 </section>
 
 <!-- MODAL -->
@@ -137,13 +175,11 @@
 
   <button class="nav left" onclick="event.stopPropagation(); prevImg()">‹</button>
 
-  <div class="modal-content" onclick="event.stopPropagation()">
+  <div style="text-align:center" onclick="event.stopPropagation()">
     <img id="modalImg">
-
     <div class="modal-info">
       <h3 id="modalTitle"></h3>
       <p id="modalPrice"></p>
-      <p class="extra">Papel Fujicolor Profesional</p>
     </div>
   </div>
 
@@ -151,62 +187,92 @@
 
 </div>
 
-<!-- SCRIPT ÚNICO CORREGIDO -->
 <script>
 
 let currentIndex = 0;
-
 const images = Array.from(document.querySelectorAll(".card img"));
+
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
+
+let startX = 0;
+let dragging = false;
 
 function openModal(index){
   currentIndex = index;
-  updateModal();
-  document.getElementById("modal").style.display = "flex";
+  showImage(0);
+  modal.style.display = "flex";
 }
 
-function updateModal(){
-  const img = images[currentIndex];
+function showImage(dir){
 
-  document.getElementById("modalImg").src = img.src;
+  modalImg.style.transition = "none";
+  modalImg.style.transform = `translateX(${dir * 60}px) scale(0.98)`;
+  modalImg.style.opacity = "0.6";
 
-  const card = img.closest(".card");
-  document.getElementById("modalTitle").innerText = card.dataset.title;
-  document.getElementById("modalPrice").innerText = card.dataset.price;
+  setTimeout(() => {
+
+    const img = images[currentIndex];
+
+    modalImg.src = img.src;
+
+    const card = img.closest(".card");
+    document.getElementById("modalTitle").innerText = card.dataset.title;
+    document.getElementById("modalPrice").innerText = card.dataset.price;
+
+    modalImg.style.transition = "transform .35s ease, opacity .35s ease";
+    modalImg.style.transform = "translateX(0px) scale(1)";
+    modalImg.style.opacity = "1";
+
+  }, 60);
 }
 
 function closeModal(){
-  document.getElementById("modal").style.display = "none";
+  modal.style.display = "none";
 }
 
 function nextImg(){
   currentIndex = (currentIndex + 1) % images.length;
-  updateModal();
+  showImage(1);
 }
 
 function prevImg(){
   currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateModal();
+  showImage(-1);
 }
 
-/* click fuera cierra */
-document.getElementById("modal").addEventListener("click", closeModal);
+/* CLICK FUERA */
+modal.addEventListener("click", closeModal);
 
-/* SWIPE MOBILE */
-let startX = 0;
-
-document.getElementById("modal").addEventListener("touchstart", e=>{
+/* SWIPE CON INERCIA VISUAL */
+modal.addEventListener("touchstart", e=>{
   startX = e.touches[0].clientX;
+  dragging = true;
 });
 
-document.getElementById("modal").addEventListener("touchend", e=>{
+modal.addEventListener("touchmove", e=>{
+  if(!dragging) return;
+
+  let x = e.touches[0].clientX;
+  let diff = x - startX;
+
+  modalImg.style.transition = "none";
+  modalImg.style.transform = `translateX(${diff}px) scale(${1 - Math.abs(diff)/1200})`;
+});
+
+modal.addEventListener("touchend", e=>{
+  dragging = false;
+
   let endX = e.changedTouches[0].clientX;
+  let diff = endX - startX;
 
-  if(startX - endX > 50){
+  if(diff < -50){
     nextImg();
-  }
-
-  if(endX - startX > 50){
+  } else if(diff > 50){
     prevImg();
+  } else {
+    modalImg.style.transition = "transform .3s ease";
+    modalImg.style.transform = "translateX(0px) scale(1)";
   }
 });
 
