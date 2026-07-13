@@ -145,6 +145,7 @@ body{
   justify-content:center;
   align-items:center;
   z-index:9999;
+  transition:opacity .18s ease;
 }
 
 #modalImg{
@@ -153,9 +154,22 @@ body{
   object-fit:contain;
 }
 
+.print-info{
+  margin-top:10px;
+  font-size:13px;
+  color:rgba(255,255,255,0.75);
+  line-height:1.4;
+
+  width:100%;
+  text-align:center;
+} 
+
 .modal-content{
   text-align:center;
   color:#fff;
+   display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
 .modal-info{
@@ -278,4 +292,62 @@ body{
     right:15px;
     top:15px;
   }
+}
+
+/* ===========================
+   VIEW TOGGLE
+=========================== */
+
+.view-toggle{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:18px;
+}
+
+.view-toggle button{
+    background:none;
+    border:1px solid #ddd;
+    border-radius:20px;
+    padding:7px 14px;
+    font:inherit;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.view-toggle button.active{
+    background:#111;
+    color:#fff;
+    border-color:#111;
+}
+
+/* FEED */
+.gallery.feed{
+    column-count:1;
+    max-width:950px;
+}
+
+/* GRID */
+.gallery.grid{
+    column-count:3;
+    column-gap:20px;
+    max-width:1500px;
+}
+
+.gallery.grid .card{
+    margin-bottom:20px;
+}
+
+@media(max-width:1000px){
+    .gallery.grid{
+        column-count:2;
+    }
+}
+
+@media(max-width:700px){
+    .gallery.grid,
+    .gallery.feed{
+        column-count:1;
+        max-width:950px;
+    }
 }
