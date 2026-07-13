@@ -13,6 +13,7 @@
 
 <link rel="stylesheet" href="style.css"/>
 
+
 <style>
 body{
   margin:0;
@@ -134,130 +135,144 @@ body{
   </div>
 </div>
 
+<div class="view-toggle">
+    <button id="feedBtn" class="active" title="Vista exposición">
+        ☰
+    </button>
+
+    <button id="gridBtn" title="Vista cuadrícula">
+        ⊞
+    </button>
+</div>
+
 <!-- GALLERY (TUS CARDS SIN TOCAR) -->
 <section class="gallery">
 
-  <div class="card" data-title="Plaza de la Marina Fonsi 2019" data-price="80€">
+  <div class="card" data-title="Fonsi Plaza de la Marina - 2019" data-price="80€">
+
     <div class="img-wrap">
       <img src="img/fonsimarina.jpg" onclick="openModal(0)">
     </div>
   </div>
 
-  <div class="card" data-title="Tony Hawk McTwist Málaga 2015" data-price="40€">
+  <div class="card" data-title="Tony Hawk McTwist - Málaga 2015" data-price="40€">
     <div class="img-wrap">
       <img src="img/Tony hawk mctwist skatepark ruben alcantara A3.jpg" onclick="openModal(1)">
     </div>
   </div>
 
-  <div class="card" data-title="Montes 2012" data-price="40€">
+  <div class="card" data-title="Minirampa Montes - 2012" data-price="40€">
     <div class="img-wrap">
       <img src="img/Veny Y Yonka minirampa de los montes A3.jpg" onclick="openModal(2)">
     </div>
   </div>
 
-  <div class="card" data-title="360 Flip 2014" data-price="40€">
+  <div class="card" data-title="ÁLvaro 360 flip lloviendo - 2014" data-price="40€">
     <div class="img-wrap">
       <img src="img/Alvaro 360 flip rio bajo el puente 40X50.jpg" onclick="openModal(3)">
     </div>
   </div>
 
-  <div class="card" data-title="Ben Raybourn 540" data-price="40€">
+  <div class="card" data-title="Ben Raybourn 540 - 2015" data-price="40€">
     <div class="img-wrap">
       <img src="img/Ben raybourn 540 con Shaun Hale mirando A3.jpg" onclick="openModal(4)">
     </div>
   </div>
 
-  <div class="card" data-title="Diego homenaje peluca" data-price="80€">
+  <div class="card" data-title="Diego homenaje peluca - 2016" data-price="80€">
     <div class="img-wrap">
       <img src="img/Diego homenaje peluca 40X50.jpg" onclick="openModal(5)">
     </div>
   </div>
 
-  <div class="card" data-title="Street Mood" data-price="25€">
+  <div class="card" data-title="David Ollie sobre Rafael" data-price="25€">
     <div class="img-wrap">
       <img src="img/David ollie over rafael 40X50.jpg" onclick="openModal(6)">
     </div>
   </div>
 
-  <div class="card" data-title="Skate Air" data-price="60€">
+  <div class="card" data-title="Carlos Del Amo fs Noses" data-price="60€">
     <div class="img-wrap">
       <img src="img/carlos del amo fs noseslide A3.jpg" onclick="openModal(7)">
     </div>
   </div>
 
-  <div class="card" data-title="Sunset Line" data-price="100€">
+  <div class="card" data-title="Ricar y Yogu Boxeando en la
+minirampa del Lagarillo - 2016" data-price="100€">
     <div class="img-wrap">
       <img src="img/boxeando minirampa lagarillo 40X50.jpg" onclick="openModal(8)">
     </div>
   </div>
 
-  <div class="card" data-title="Urban Silence" data-price="50€">
+  <div class="card" data-title="Jaime Bueno Bs tail 2013" data-price="50€">
     <div class="img-wrap">
       <img src="img/Jaime Bueno bs tail paseo del parque A3.jpg" onclick="openModal(9)">
     </div>
   </div>
 
-  <div class="card" data-title="Jorge Calderón flip" data-price="50€">
+  <div class="card" data-title="Jorge Calderón Kickflip homenaje a peluca - 2016" data-price="50€">
     <div class="img-wrap">
       <img src="img/Jorde calderon flip rio homenaje al peluca A3.jpg" onclick="openModal(10)">
     </div>
   </div>
 
-  <div class="card" data-title="Equitativa" data-price="50€">
+  <div class="card" data-title="La equitativa desde la Marina - 2019" data-price="50€">
     <div class="img-wrap">
       <img src="img/la equitativa atardecer 40X50.jpg" onclick="openModal(11)">
     </div>
   </div>
 
-  <div class="card" data-title="Palmeras Marina" data-price="50€">
+  <div class="card" data-title="La equitativa desde la Marina - 2019" data-price="50€">
     <div class="img-wrap">
       <img src="img/palmeras plaza de la marina A2.jpg" onclick="openModal(12)">
     </div>
   </div>
 
-  <div class="card" data-title="Ricky melon" data-price="50€">
+  <div class="card" data-title="Ricky Navarro Melon Fackie - 2014" data-price="50€">
     <div class="img-wrap">
       <img src="img/Ricky Melon Fakie A3.jpg" onclick="openModal(13)">
     </div>
   </div>
 
-  <div class="card" data-title="Alien cloud" data-price="50€">
+  <div class="card" data-title="Nube UFO - 2019" data-price="50€">
     <div class="img-wrap">
       <img src="img/Nube Alien A3.jpg" onclick="openModal(14)">
     </div>
   </div>
 
-  <div class="card" data-title="Pájaros" data-price="50€">
+  <div class="card" data-title="Pajaros Amantes - 2019" data-price="50€">
     <div class="img-wrap">
       <img src="img/pajaros enamorados 40X50.jpg" onclick="openModal(15)">
     </div>
   </div>
 
-  <div class="card" data-title="Nollie BS heel" data-price="50€">
+  <div class="card" data-title="Arthur Caraccio Nollie bs hell - 2019" data-price="50€">
     <div class="img-wrap">
       <img src="img/nollie bs hell la pista arthus caraccio 40X50.jpg" onclick="openModal(16)">
     </div>
   </div>
 
+<!--
   <div class="card" data-title="Tony Hawk repeat" data-price="50€">
     <div class="img-wrap">
       <img src="img/Tony hawk mctwist skatepark ruben alcantara A3.jpg" onclick="openModal(17)">
     </div>
   </div>
+-->
 
-  <div class="card" data-title="Málaga palace" data-price="50€">
+  <div class="card" data-title="Málaga Palacio al atardecer desde la Marina - 2019" data-price="50€">
     <div class="img-wrap">
       <img src="img/malaga palacio atardecer marina 40X50.jpg" onclick="openModal(18)">
     </div>
   </div>
 
-  <div class="card" data-title="Johnny caída" data-price="50€">
+  <div class="card" data-title="Jonathan Recio Caida contra Cámara - 2014" data-price="50€">
     <div class="img-wrap">
       <img src="img/johny caida 40X50.jpg" onclick="openModal(19)">
     </div>
   </div>
 
-  <div class="card" data-title="Miguel prieto" data-price="50€">
+  <div class="card" data-title="Miguel Prieto Nosepick - 2019" data-price="50€">
     <div class="img-wrap">
       <img src="img/miguel prieto nosepick marina A3.jpg" onclick="openModal(20)">
     </div>
@@ -277,6 +292,7 @@ body{
     <div class="modal-info">
       <h3 id="modalTitle"></h3>
       <p id="modalPrice"></p>
+      <p class="print-info">Papel fotográfico profesional Fujifilm</p>
     </div>
   </div>
 
@@ -315,9 +331,30 @@ let startX = 0;
 let dragging = false;
 
 function openModal(index){
-  currentIndex = index;
-  showImage(0);
-  modal.style.display = "flex";
+
+    currentIndex = index;
+
+    const img = images[currentIndex];
+
+    modal.style.display = "flex";
+    modal.style.opacity = "0";
+
+    const preload = new Image();
+
+    preload.onload = () =>{
+
+        modalImg.src = img.src;
+
+        const card = img.closest(".card");
+        modalTitle.innerText = card.dataset.title;
+        modalPrice.innerText = card.dataset.price;
+
+        modal.style.opacity = "1";
+
+    };
+
+    preload.src = img.src;
+
 }
 
 function showImage(dir){
@@ -391,6 +428,34 @@ modal.addEventListener("touchend", e=>{
     modalImg.style.transform = "translateX(0px) scale(1)";
   }
 });
+
+
+const gallery = document.querySelector(".gallery");
+
+const feedBtn = document.getElementById("feedBtn");
+const gridBtn = document.getElementById("gridBtn");
+
+function changeView(view){
+
+    gallery.classList.remove("feed","grid");
+
+    if(view==="grid"){
+        gallery.classList.add("grid");
+        gridBtn.classList.add("active");
+        feedBtn.classList.remove("active");
+    }else{
+        gallery.classList.add("feed");
+        feedBtn.classList.add("active");
+        gridBtn.classList.remove("active");
+    }
+
+    localStorage.setItem("gallery-view",view);
+}
+
+feedBtn.onclick=()=>changeView("feed");
+gridBtn.onclick=()=>changeView("grid");
+
+changeView("feed");
 
 </script>
 
